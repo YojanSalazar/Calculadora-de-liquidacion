@@ -20,7 +20,7 @@ def calculo_tiempo_trabajado_dias(inicio, fin):
     y1, m1, d1 = fecha_inicio.year, fecha_inicio.month, fecha_inicio.day
     y2, m2, d2 = fecha_fin.year, fecha_fin.month, fecha_fin.day
 
-    return (y2 - y1) * 360 + (m2 - m1) * 30 + (d2 - d1) + 1
+    return (y2 - y1) * 360 + (m2 - m1) * 30 + (d2 - d1)
 
 
 def calculo_cesantias(salario, dias):
