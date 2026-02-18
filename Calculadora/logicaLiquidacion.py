@@ -15,7 +15,10 @@ def calculo_tiempo_trabajado_dias(inicio, fin):
     fecha_fin = datetime.strptime(fin, formato)
 
     if fecha_fin < fecha_inicio:
-        raise ValueError("La fecha de retiro no puede ser anterior")
+        raise ValueError("La fecha de retiro no puede ser anterior.")
+    #Revisar esto
+    """if formato != "%d/%m/%Y": 
+        raise ValueError("El formato de la fecha está incorrecto.")"""
 
     y1, m1, d1 = fecha_inicio.year, fecha_inicio.month, fecha_inicio.day
     y2, m2, d2 = fecha_fin.year, fecha_fin.month, fecha_fin.day
@@ -37,3 +40,5 @@ def calculo_prima_servicios(salario, dias):
 
 def calculo_pago_neto(cesantias, interesCesantia, vacaciones, prima):
     return round(cesantias + interesCesantia + vacaciones + prima)
+
+

@@ -120,7 +120,13 @@ class testCalculoLiquidacion(unittest.TestCase):
         
     def test_fecha_retiro_anterior_a_fecha_ingreso(self):
         with self.assertRaises(ValueError):
-            ...
+            logicaLiquidacion.calculo_tiempo_trabajado_dias("10/04/2026", "28/03/2026")
+
+    def test_fecha_formato_invalida(self):
+        with self.assertRaises(ValueError):
+            logicaLiquidacion.calculo_tiempo_trabajado_dias("cualquiera", "05/14/2026")
+    
+
         
 
 unittest.main()
