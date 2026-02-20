@@ -10,8 +10,7 @@ def calculo_tiempo_trabajado_dias():
         
         print(f'Dias trabajados: {dias}')
 
-    except ValueError as e:
-        print(f"Error: {e}")
-        return None
+    except:
+        raise ValueError("El formato de la fecha está incorrecto.")
 
-print(calculo_tiempo_trabajado_dias())
+calculo_tiempo_trabajado_dias()
