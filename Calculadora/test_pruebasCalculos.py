@@ -115,11 +115,11 @@ class testCalculoLiquidacion(unittest.TestCase):
         self.assertEqual(pagoNeto, 615593)
     
     def test_salario_menorigual_cero(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaises(logicaLiquidacion.ErrorSalario):
             logicaLiquidacion.validar_salario(0)
         
     def test_fecha_retiro_anterior_a_fecha_ingreso(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaises(logicaLiquidacion.ErrorFecha):
             logicaLiquidacion.calculo_tiempo_trabajado_dias("10/04/2026", "28/03/2026")
 
     def test_fecha_ingresada_inexistente(self):
@@ -131,7 +131,7 @@ class testCalculoLiquidacion(unittest.TestCase):
             logicaLiquidacion.calculo_tiempo_trabajado_dias("cualquiera", "05/14/2026")
     
     def test_valor_ingresado_en_formato_invalivo(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaises(logicaLiquidacion.ErrorSalario):
             logicaLiquidacion.validar_salario("Tres Millones")
         
 if __name__ == "__main__":

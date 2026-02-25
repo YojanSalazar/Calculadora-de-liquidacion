@@ -11,6 +11,6 @@ def calculo_tiempo_trabajado_dias():
         print(f'Dias trabajados: {dias}')
 
     except:
-        raise ValueError("El formato de la fecha está incorrecto.")
+        raise logicaLiquidacion.ErrorFecha("El formato de la fecha está incorrecto.")
 
 calculo_tiempo_trabajado_dias()
