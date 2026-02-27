@@ -6,6 +6,7 @@ def validar_salario(salario):
         raise ErrorSalario("Debe ingresar valores correctos.")
     if salario <= 0:
         raise ErrorSalario("El salario debe ser mayor a 0.")
+    return True
 
 
 def calculo_tiempo_trabajado_dias(inicio, fin):
