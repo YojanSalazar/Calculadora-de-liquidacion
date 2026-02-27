@@ -123,11 +123,11 @@ class testCalculoLiquidacion(unittest.TestCase):
             logicaLiquidacion.calculo_tiempo_trabajado_dias("10/04/2026", "28/03/2026")
 
     def test_fecha_ingresada_inexistente(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaises(logicaLiquidacion.ErrorFecha):
             logicaLiquidacion.calculo_tiempo_trabajado_dias("32/04/2026", "01/05/2026")
 
     def test_fecha_formato_invalida(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaises(logicaLiquidacion.ErrorFecha):
             logicaLiquidacion.calculo_tiempo_trabajado_dias("cualquiera", "05/14/2026")
     
     def test_valor_ingresado_en_formato_invalivo(self):

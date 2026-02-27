@@ -11,8 +11,13 @@ def validar_salario(salario):
 def calculo_tiempo_trabajado_dias(inicio, fin):
     formato = "%d/%m/%Y"
 
-    fecha_inicio = datetime.strptime(inicio, formato)
-    fecha_fin = datetime.strptime(fin, formato)
+    try:
+        
+        fecha_inicio = datetime.strptime(inicio, formato)
+        fecha_fin = datetime.strptime(fin, formato)
+    except ValueError:
+        
+        raise ErrorFecha("El formato de la fecha es inválido. Debe ser DD/MM/AAAA.")
 
     if fecha_fin < fecha_inicio:
         raise ErrorFecha("La fecha de retiro no puede ser anterior.")

@@ -1,16 +1,15 @@
 import logicaLiquidacion
 from datetime import datetime
 
-def calculo_tiempo_trabajado_dias():
-    try:
+def ingreso_fechas():
+    
         fecha_inicio = input("Fecha ingreso (DD/MM/AAAA): ")
         fecha_fin = input("Fecha retiro (DD/MM/AAAA): ")
 
-        dias= logicaLiquidacion.calculo_tiempo_trabajado_dias(fecha_inicio, fecha_fin)
-        
-        print(f'Dias trabajados: {dias}')
+        dias = logicaLiquidacion.calculo_tiempo_trabajado_dias(fecha_inicio, fecha_fin)
 
-    except:
-        raise logicaLiquidacion.ErrorFecha("El formato de la fecha está incorrecto.")
-
-calculo_tiempo_trabajado_dias()
+def ingreso_salario():
+    salario = input("Ingrese su SMMLV: ")
+    logicaLiquidacion.validar_salario(salario)
+    
+ingreso_fechas()
