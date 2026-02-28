@@ -10,7 +10,7 @@ def ingreso_fechas():
 
 def ingreso_salario():
     salariominimo = input("SMMLV: ")
-    print(isinstance(salariominimo, str))
+    salariominimo = int(salariominimo)
     logicaLiquidacion.validar_salario(salariominimo)
     
     
