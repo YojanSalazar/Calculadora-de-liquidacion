@@ -1,4 +1,9 @@
-import logicaLiquidacion
+import sys
+sys.path.append("Calculadora")
+sys.path.append("src")
+
+from Calculadora.src.model import logicaLiquidacion
+
 import unittest
 from datetime import datetime
 
