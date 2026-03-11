@@ -6,15 +6,13 @@ def ingreso_fechas():
         fecha_inicio = input("Fecha ingreso (DD/MM/AAAA): ")
         fecha_fin = input("Fecha retiro (DD/MM/AAAA): ")
 
-        dias = logicaLiquidacion.calculo_tiempo_trabajado_dias(fecha_inicio, fecha_fin)
+        dias = logicaLiquidacion.calcular_tiempo_trabajado_dias(fecha_inicio, fecha_fin)
 
 def ingreso_salario():
     salariominimo = input("SMMLV: ")
     salariominimo = int(salariominimo)
     logicaLiquidacion.validar_salario(salariominimo)
     
-    
-
 while True:
     print("\nBienvenido al programa para calcular la liquidación de su ex-empleado.")
     print("---------------------------------------------------------------------")

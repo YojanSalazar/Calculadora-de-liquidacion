@@ -1,6 +1,5 @@
 from datetime import datetime
 
-
 def validar_salario(salario):
     if not isinstance(salario, int):
         raise ErrorSalario("Debe ingresar valores correctos.")
@@ -8,8 +7,7 @@ def validar_salario(salario):
         raise ErrorSalario("El salario debe ser mayor a 0.")
     return True
 
-
-def calculo_tiempo_trabajado_dias(inicio, fin):
+def calcular_tiempo_trabajado_dias(inicio, fin):
     formato = "%d/%m/%Y"
 
     try:
@@ -28,20 +26,19 @@ def calculo_tiempo_trabajado_dias(inicio, fin):
 
     return (y2 - y1) * 360 + (m2 - m1) * 30 + (d2 - d1)
 
-
-def calculo_cesantias(salario, dias):
+def calcular_cesantias(salario, dias):
     return (salario*dias)/360
     
-def calculo_interes_cesantias(cesantias, dias):
+def calcular_interes_cesantias(cesantias, dias):
     return (cesantias*dias*0.12)/360
 
-def calculo_vacaciones(salario,dias):
+def calcular_vacaciones(salario,dias):
     return(salario*dias)/720
 
-def calculo_prima_servicios(salario, dias):
+def calcular_prima_servicios(salario, dias):
     return(salario*dias)/360
 
-def calculo_pago_neto(cesantias, interesCesantia, vacaciones, prima):
+def calcular_pago_neto(cesantias, interesCesantia, vacaciones, prima):
     return round(cesantias + interesCesantia + vacaciones + prima)
 
 class ErrorSalario(Exception):
