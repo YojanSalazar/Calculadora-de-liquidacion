@@ -1,4 +1,7 @@
-from src.model import logicaLiquidacion
+import sys
+sys.path.append("src")
+
+from model import logicaLiquidacion
 from datetime import datetime
 
 def ingreso_fechas():
