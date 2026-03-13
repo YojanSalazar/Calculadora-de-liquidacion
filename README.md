@@ -20,4 +20,7 @@
 En logicaLiquidacion.py se hacen todos los calculars, y son: validar si el valor ingresado en el salario es apto, validar las fechas ingresadas, calcular las cesantias, su interes, las vacaciones, la prima de servicios, y el total a pagar por toda la liquidación.
 
 ## Comando para ejecutar las pruebas
-- 
+- *caremico*
+- **caremico**
+- > care mico
+  
