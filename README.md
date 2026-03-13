@@ -13,7 +13,7 @@
 - Prerrequisitos: Clonar el repositorio en un ambiente establecido
 - Ejecución:
     -  Ubicados en la carpeta raiz del proyecto, ejecute:
-    -  Calculadora-de-liquidaci-n-/src/view/interfazLiquidacion.py  
+    -  `Calculadora-de-liquidaci-n-/src/view/interfazLiquidacion.py`  
 
 ## Arquitectura del proyecto
 - El programa funciona preguntandole al usuario que ingrese tres inputs: dos (2) fechas; la de inicio del contrato de su empleado y la de fin del mismo y el salario que se estaba pagando.
