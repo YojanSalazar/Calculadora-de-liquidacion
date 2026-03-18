@@ -1,30 +1,40 @@
 from datetime import datetime
+from model import errores 
 
 def validar_salario(salario):
     if not isinstance(salario, int):
-        raise ErrorSalario("Debe ingresar valores correctos.")
+        raise errores.ErrorSalarioNoEntero()
     if salario <= 0:
-        raise ErrorSalario("El salario debe ser mayor a 0.")
+        raise errores.ErrorSalarioMenorDeCero()
     return True
+    
+formato_fecha = "%d/%m/%Y"
 
-def calcular_tiempo_trabajado_dias(inicio, fin):
-    formato = "%d/%m/%Y"
-
+def convertir_fecha(fecha):
+    if not fecha:
+        raise errores.ErrorFechaFormatoIncorrecto()
     try:
-        
-        fecha_inicio = datetime.strptime(inicio, formato)
-        fecha_fin = datetime.strptime(fin, formato)
+        return datetime.strptime(fecha, formato_fecha)
     except ValueError:
-        
-        raise ErrorFecha("El formato de la fecha es inválido. Debe ser DD/MM/AAAA.")
-
-    if fecha_fin < fecha_inicio:
-        raise ErrorFecha("La fecha de retiro no puede ser anterior.")
-
+        raise errores.ErrorFechaFormatoIncorrecto()
+    
+def validar_rango_fechas(inicio, fin):
+    if fin < inicio: 
+        raise errores.ErrorFechaIncorrecta()
+    
+def calcular_dias_360(fecha_inicio, fecha_fin):
     y1, m1, d1 = fecha_inicio.year, fecha_inicio.month, fecha_inicio.day
     y2, m2, d2 = fecha_fin.year, fecha_fin.month, fecha_fin.day
 
     return (y2 - y1) * 360 + (m2 - m1) * 30 + (d2 - d1)
+
+def calcular_tiempo_trabajado_dias(inicio, fin):
+    fecha_inicio = convertir_fecha(inicio)
+    fecha_fin = convertir_fecha(fin)
+    
+    validar_rango_fechas(fecha_inicio, fecha_fin)
+    
+    return calcular_dias_360(fecha_inicio, fecha_fin)
 
 def calcular_cesantias(salario, dias):
     return (salario*dias)/360
@@ -41,9 +51,3 @@ def calcular_prima_servicios(salario, dias):
 def calcular_pago_neto(cesantias, interesCesantia, vacaciones, prima):
     return round(cesantias + interesCesantia + vacaciones + prima)
 
-class ErrorSalario(Exception):
-    """Se usa cuando el valor del salario es erroneo."""
-
-class ErrorFecha(Exception):
-    """Se usa cuando el formato de la fecha está mal intoducida"""
-    """Se usa también cuando se ingresa una fecha de retiro anterior a la de ingreso."""

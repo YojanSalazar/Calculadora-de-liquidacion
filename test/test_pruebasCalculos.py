@@ -1,7 +1,8 @@
 import sys
 sys.path.append("src")
 
-from model import logicaLiquidacion 
+from model import logicaLiquidacion
+from model import errores
 
 import unittest
 from datetime import datetime
