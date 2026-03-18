@@ -48,7 +48,7 @@ Desde la raíz del proyecto, ejecuta:
 
 ---
 
-## 🧠 Arquitectura
+## Arquitectura
 
 El proyecto está dividido en tres componentes principales:
 
@@ -91,7 +91,7 @@ Incluye un ciclo `while` que mantiene el programa en ejecución.
 
 ---
 
-### 🧪 3. Pruebas (`test_pruebasCalculos.py`)
+### 3. Pruebas (`test_pruebasCalculos.py`)
 
 Incluye pruebas con `unittest` para:
 
