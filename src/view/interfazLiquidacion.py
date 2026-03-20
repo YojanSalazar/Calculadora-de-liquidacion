@@ -16,9 +16,6 @@ def ingreso_salario():
     valido = logicaLiquidacion.validar_salario(salariominimo)
     if valido:
         return salariominimo
-    
-
-
 
 print("\nBienvenido al programa para calcular la liquidación de su ex-empleado.")
 print("---------------------------------------------------------------------")
