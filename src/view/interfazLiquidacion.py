@@ -5,12 +5,20 @@ from model import logicaLiquidacion
 from datetime import datetime
 
 def ingreso_fechas():
+    """
+    Returns:
+        int: Número de días trabajados calculados utilizando el método 360.
+    """
     fecha_inicio = input("Fecha ingreso (DD/MM/AAAA): ")
     fecha_fin = input("Fecha retiro (DD/MM/AAAA): ")
 
     return logicaLiquidacion.calcular_tiempo_trabajado_dias(fecha_inicio, fecha_fin)
 
 def ingreso_salario():
+    """
+    Returns:
+        salariominimo: Salario mensual del empleado ingresado.
+    """
     salariominimo = input("SMMLV: ")
     salariominimo = int(salariominimo)
     valido = logicaLiquidacion.validar_salario(salariominimo)
