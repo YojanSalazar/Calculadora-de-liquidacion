@@ -103,7 +103,7 @@ Incluye pruebas con `unittest` para:
 ## Estructura
 
 ```
-project/
+Calculadora-de-liquidaci-n-/
 │
 ├── src/
 │   └── model/
