@@ -108,6 +108,7 @@ Calculadora-de-liquidaci-n-/
 ├── src/
 │   └── model/
 │   │   └── logicaLiquidacion.py
+│   │   └── errores.py
 │   │
 │   └── view/
 │       └── interfazLiquidacion.py
